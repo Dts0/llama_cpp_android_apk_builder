@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 90
     steps:
       - name: Checkout upstream llama.cpp
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ggml-org/llama.cpp
           ref: ${{ inputs.llama_ref }}
@@ -27,13 +27,13 @@ jobs:
           path: llama.cpp
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Print exact upstream revision
         shell: bash
